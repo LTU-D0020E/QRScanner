@@ -6,8 +6,8 @@ This is a basic implementation of a QR code reader in React Native,
  > sudo apt install nodejs
 * Install Yarn
 > sudo npm install --global yarn
-* Install Expo
-> yarn create expo
+* Install Dependencies
+> yarn 
 
 ## Getting Started:
 To run the app server use the following command 
