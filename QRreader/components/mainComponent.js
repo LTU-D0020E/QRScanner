@@ -1,17 +1,30 @@
-import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import ScanScreen from './Scan'; // Your scan page
-import OutputScreen from './outputScreen'; // Your output page
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import SplashScreen from './SplashScreen';
+import LoginScreen from './LoginScreen';
+import ScanScreen from './Scan';
+import OutputScreen from './outputScreen';
 
 const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
+
+function AppStack() {
+  return (
+    <Drawer.Navigator initialRouteName="Login">
+      <Drawer.Screen name="Login" component={LoginScreen} />
+      <Drawer.Screen name="Scan" component={ScanScreen} />
+      <Drawer.Screen name="Output" component={OutputScreen} options={{ drawerLabel: () => null, title: null, drawerIcon: () => null }} />
+    </Drawer.Navigator>
+  );
+}
 
 export default function MainComponent() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Scan">
-        <Stack.Screen name="Scan" component={ScanScreen} />
-        <Stack.Screen name="Output" component={OutputScreen} />
+      <Stack.Navigator initialRouteName="Splash" headerMode="none">
+        <Stack.Screen name="Splash" component={SplashScreen} />
+        <Stack.Screen name="AppStack" component={AppStack} />
       </Stack.Navigator>
     </NavigationContainer>
   );
