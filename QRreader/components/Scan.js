@@ -45,7 +45,7 @@ export default function ScanScreen() {
   const handleBarCodeScanned = ({ type, data }) => {
     setScanned(true);
     console.log('Type: ' + type + '\nData: ' + data);
-    navigation.navigate('Output', { scannedData: data });
+    navigation.navigate('ScanForm', { scannedData: data });
   };
 
 
