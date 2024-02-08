@@ -18,7 +18,6 @@ function AppStack() {
     <Drawer.Navigator initialRouteName="Login">
       <Drawer.Screen name="Login" component={LoginScreen} />
       <Drawer.Screen name="Scan" component={ScanScreen} />
-      {/* <Drawer.Screen name="Output" component={OutputScreen} options={{ drawerLabel: () => null, title: null, drawerIcon: () => null }} /> */}
       <Drawer.Screen name="ScanForm" component={ScanForm} options={{ drawerLabel: () => null, title: null, drawerIcon: () => null }} />
       {/* <Drawer.Screen name="WheelScreen" component={WheelScreen} options={{ drawerLabel: () => null, title: null, drawerIcon: () => null,headerShown:false }} /> */}
 
